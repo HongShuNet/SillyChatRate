@@ -147,6 +147,12 @@ jQuery(async () => {
   $("#chat-rate-input").on("input", onButtonInput);
   $('#chat-rate-export').on("click", onExportClick);
 
+  // 评分输入框enter事件
+  $('#chat-rate-form').on("submit", function(e) {
+    e.preventDefault();
+    onButtonClick();
+  })
+
   let chatRatePosition = localStorage.getItem('chat-rate-position');
   let chatRatePositionLeft = $('#sheld').offset().left+$('#sheld').outerWidth()+20;
   let chatRatePositionTop = $(window).height() - $('#chat-rate-wrapper').outerHeight() - 20;
